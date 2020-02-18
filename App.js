@@ -44,7 +44,7 @@ export default function App(props) {
   const [initialNavigationState, setInitialNavigationState] = useState();
   const containerRef = useRef();
   const { getInitialState } = useLinking(containerRef);
-  const [theme, setTheme] = React.useState("dark");
+  const [theme, setTheme] = React.useState("light");
   const currentTheme = themes[theme];
 
   const toggleTheme = () => {

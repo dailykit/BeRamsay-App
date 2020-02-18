@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { Layout, Text, Toggle } from "@ui-kitten/components";
 
-import { ThemeContext } from "../contexts/theme-context";
+import { ThemeContext } from "../../contexts/theme-context";
 
 const ProfileScreen = () => {
   const [checked, setChecked] = React.useState(false);
