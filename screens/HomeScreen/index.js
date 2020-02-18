@@ -15,28 +15,28 @@ const dataChips = [
   "rewards"
 ];
 
-const dataScrollCards = {
-  1: {
+const dataScrollCards = [
+  {
     name: "Indian Resturant",
     following: "200",
     recipies: "7"
   },
-  2: {
+  {
     name: "Indian Resturant",
     following: "200",
     recipies: "7"
   },
-  3: {
+  {
     name: "Indian Resturant",
     following: "200",
     recipies: "7"
   },
-  4: {
+  {
     name: "Indian Resturant",
     following: "200",
     recipies: "7"
   }
-};
+];
 
 export default function HomeScreen() {
   return (

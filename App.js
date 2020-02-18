@@ -4,12 +4,14 @@ import {
   StatusBar,
   StyleSheet,
   SafeAreaView,
-  View
+  View,
+  Image
 } from "react-native";
 import { SplashScreen } from "expo";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 import Constants from "expo-constants";
+import { Asset } from "expo-asset";
 
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import {
@@ -52,6 +54,16 @@ export default function App(props) {
     setTheme(nextTheme);
   };
 
+  const cacheImages = images => {
+    return images.map(image => {
+      if (typeof image === "string") {
+        return Image.prefetch(image);
+      } else {
+        return Asset.fromModule(image).downloadAsync();
+      }
+    });
+  };
+
   // Load any resources or data that we need prior to rendering the app
   useEffect(() => {
     async function loadResourcesAndDataAsync() {
@@ -66,6 +78,8 @@ export default function App(props) {
           ...Ionicons.font,
           "space-mono": require("./assets/fonts/SpaceMono-Regular.ttf")
         });
+        const images = [require("./assets/temp_resturnt.jpg")];
+        await cacheImages(images);
       } catch (e) {
         // We might want to provide this error information to an error reporting service
         console.warn(e);

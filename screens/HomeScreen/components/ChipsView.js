@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: 10,
     height: 60,
-    width
+    width,
+    marginLeft: 10
   },
   chip: {
     padding: 5,
