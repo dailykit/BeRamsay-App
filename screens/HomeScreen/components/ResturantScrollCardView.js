@@ -22,14 +22,16 @@ const ResturantScrollCardView = props => {
             <Text category="h4" style={styles.resturantName}>
               {resturant.name}
             </Text>
-            <Button style={styles.button}>Follow</Button>
-            <View style={styles.details}>
-              <Text category="h6" style={styles.detailsText}>
-                {resturant.recipies} recipies |{" "}
-              </Text>
-              <Text category="h6" style={styles.detailsText}>
-                {resturant.following} following
-              </Text>
+            <View style={styles.detailsConatiner}>
+              <View style={styles.details}>
+                <Text category="h6" style={styles.detailsText}>
+                  {resturant.recipies} recipies |{" "}
+                </Text>
+                <Text category="h6" style={styles.detailsText}>
+                  {resturant.following} following
+                </Text>
+              </View>
+              <Button style={styles.button}>Follow</Button>
             </View>
           </Layout>
         ))}
@@ -40,16 +42,16 @@ const ResturantScrollCardView = props => {
 
 const styles = StyleSheet.create({
   container: {
-    height: height * 0.3,
-    marginTop: 10,
-    marginLeft: 10
+    height: height * 0.27,
+    marginTop: 10
   },
   item: {
-    height: height * 0.3,
-    width: width * 0.8,
+    height: height * 0.27,
+    width: width * 0.85,
     borderRadius: 10,
-    marginRight: 15,
-    position: "relative"
+    position: "relative",
+    marginLeft: 7,
+    marginRight: 7
   },
   image: {
     height: null,
@@ -60,19 +62,12 @@ const styles = StyleSheet.create({
   resturantName: {
     position: "absolute",
     color: "white",
-    left: 10,
-    bottom: height * 0.08
-  },
-  button: {
-    position: "absolute",
-    right: 10,
-    bottom: 10
-  },
-  details: {
-    position: "absolute",
-    flexDirection: "row",
-    bottom: height * 0.03,
+    bottom: 60,
     left: 10
+  },
+  button: {},
+  details: {
+    flexDirection: "row"
   },
   detailsText: {
     color: "white"
@@ -86,7 +81,16 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     borderRadius: 10,
-    opacity: 0.3
+    opacity: 0.27
+  },
+  detailsConatiner: {
+    flexDirection: "row",
+    alignItems: "center",
+    position: "absolute",
+    bottom: 10,
+    left: 5,
+    right: 5,
+    justifyContent: "space-between"
   }
 });
 

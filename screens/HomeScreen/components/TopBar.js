@@ -53,9 +53,10 @@ const TopBar = () => {
 
 const styles = StyleSheet.create({
   container: {
-    height: height / 10,
+    height: 60,
     flexDirection: "row",
-    width
+    width,
+    alignItems: "center"
   },
   searchSection: {
     flex: 7,

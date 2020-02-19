@@ -78,8 +78,12 @@ export default function App(props) {
           ...Ionicons.font,
           "space-mono": require("./assets/fonts/SpaceMono-Regular.ttf")
         });
-        const images = [require("./assets/temp_resturnt.jpg")];
-        await cacheImages(images);
+        const images = [
+          require("./assets/temp_resturnt.jpg"),
+          require("./assets/salad.jpg")
+        ];
+        cacheImages(images);
+        await Promise.all(cacheImages);
       } catch (e) {
         // We might want to provide this error information to an error reporting service
         console.warn(e);
@@ -100,11 +104,9 @@ export default function App(props) {
         <StatusBar
           translucent
           backgroundColor={
-            currentTheme == "light"
-              ? Colors.backgroundLight
-              : Colors.backgroundDark
+            theme == "light" ? Colors.backgroundLight : Colors.backgroundDark
           }
-          barStyle={currentTheme == "light" ? "dark-content" : "light-content"}
+          barStyle={theme == "light" ? "dark-content" : "light-content"}
         />
         <IconRegistry icons={EvaIconsPack} />
         <Provider store={store}>
@@ -116,7 +118,7 @@ export default function App(props) {
                     style={{
                       flex: 0,
                       backgroundColor:
-                        currentTheme == "light"
+                        theme == "light"
                           ? Colors.backgroundLight
                           : Colors.backgroundDark
                     }}
@@ -147,6 +149,10 @@ export default function App(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Constants.statusBarHeight / 2
+    ...Platform.select({
+      android: {
+        paddingTop: Constants.statusBarHeight / 2
+      }
+    })
   }
 });
