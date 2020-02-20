@@ -31,6 +31,7 @@ import store from "./store";
 import BottomTabNavigator from "./navigation/BottomTabNavigator";
 import useLinking from "./navigation/useLinking";
 import ResturantView from "./screens/SearchScreen/ResturantView";
+import RecipieView from "./screens/SearchScreen/RecipieView";
 
 import fallBackComponent from "./components/FallbackComponent";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -138,6 +139,10 @@ export default function App(props) {
                         <Stack.Screen
                           name="ResturantView"
                           component={ResturantView}
+                        />
+                        <Stack.Screen
+                          name="RecipieView"
+                          component={RecipieView}
                         />
                       </Stack.Navigator>
                     </NavigationContainer>

@@ -111,7 +111,15 @@ const SearchScreenView = props => {
           <Text style={styles.nearYouHeading} category="h5">
             Trending recipies near you
           </Text>
-          <Text style={styles.viewAllText}>view all ></Text>
+          <TouchableOpacity
+            onPress={() =>
+              props.navigation.navigate("RecipieView", {
+                data: trendingRecipiesData
+              })
+            }
+          >
+            <Text style={styles.viewAllText}>view all ></Text>
+          </TouchableOpacity>
         </Layout>
         <TrendingRecipiesView data={trendingRecipiesData} />
       </ScrollView>

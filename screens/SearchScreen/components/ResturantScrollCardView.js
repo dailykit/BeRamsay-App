@@ -91,8 +91,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     position: "absolute",
     bottom: 10,
-    left: 5,
-    right: 5,
+    left: 10,
+    right: 10,
     justifyContent: "space-between"
   }
 });
