@@ -5,7 +5,8 @@ import {
   StyleSheet,
   SafeAreaView,
   View,
-  Image
+  Image,
+  TouchableOpacity
 } from "react-native";
 import { SplashScreen } from "expo";
 import * as Font from "expo-font";
@@ -29,6 +30,7 @@ import store from "./store";
 
 import BottomTabNavigator from "./navigation/BottomTabNavigator";
 import useLinking from "./navigation/useLinking";
+import ResturantView from "./screens/SearchScreen/ResturantView";
 
 import fallBackComponent from "./components/FallbackComponent";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -132,6 +134,10 @@ export default function App(props) {
                         <Stack.Screen
                           name="Root"
                           component={BottomTabNavigator}
+                        />
+                        <Stack.Screen
+                          name="ResturantView"
+                          component={ResturantView}
                         />
                       </Stack.Navigator>
                     </NavigationContainer>

@@ -1,22 +1,42 @@
 import React from "react";
-import { ScrollView, Image, StyleSheet, View } from "react-native";
+import {
+  ScrollView,
+  Image,
+  StyleSheet,
+  View,
+  TouchableOpacity
+} from "react-native";
 import { Layout, Text, Button } from "@ui-kitten/components";
 
-import { height, width } from "../../../constants/Layout";
+import { height, width } from "../../constants/Layout";
 
-const ResturantScrollCardView = props => {
+const ResturantView = props => {
+  props.navigation.setOptions({
+    title: "Resturants",
+    headerStatusBarHeight: 0,
+    headerLeft: () => (
+      <TouchableOpacity
+        style={{ marginLeft: 10 }}
+        onPress={() => props.navigation.goBack()}
+      >
+        <Image
+          style={{ height: 20 }}
+          source={require("../../assets/back.png")}
+        />
+      </TouchableOpacity>
+    )
+  });
   return (
     <Layout style={styles.container}>
       <ScrollView
-        horizontal={true}
         alwaysBounceHorizontal={false}
         showsHorizontalScrollIndicator={false}
       >
-        {props.data.map((resturant, _id) => (
+        {props.route.params.data.map((resturant, _id) => (
           <Layout style={styles.item} key={_id}>
             <Image
               style={styles.image}
-              source={require("../../../assets/temp_resturnt.jpg")}
+              source={require("../../assets/temp_resturnt.jpg")}
             />
             <View style={styles.overlay}></View>
             <Text category="h4" style={styles.resturantName}>
@@ -36,28 +56,32 @@ const ResturantScrollCardView = props => {
           </Layout>
         ))}
       </ScrollView>
+      <Layout style={styles.bottomBar}>
+        <Image source={require("./../../assets/back.png")} />
+        <Image source={require("./../../assets/filter.png")} />
+      </Layout>
     </Layout>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    height: height * 0.27,
-    marginTop: 10
+    flex: 1,
+    padding: 10,
+    paddingTop: 20
   },
   item: {
     height: height * 0.27,
-    width: width * 0.85,
-    borderRadius: 10,
+    width: width - 20,
+    borderRadius: 5,
     position: "relative",
-    marginLeft: 7,
-    marginRight: 7
+    marginBottom: 20
   },
   image: {
     height: null,
     width: null,
     flex: 1,
-    borderRadius: 10
+    borderRadius: 5
   },
   resturantName: {
     position: "absolute",
@@ -65,7 +89,10 @@ const styles = StyleSheet.create({
     bottom: 60,
     left: 10
   },
-  button: {},
+  button: {
+    backgroundColor: "#3FA4FF",
+    borderColor: "#3FA4FF"
+  },
   details: {
     flexDirection: "row"
   },
@@ -88,10 +115,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     position: "absolute",
     bottom: 10,
-    left: 5,
-    right: 5,
+    left: 10,
+    right: 10,
     justifyContent: "space-between"
+  },
+  bottomBar: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 10
   }
 });
 
-export default ResturantScrollCardView;
+export default ResturantView;

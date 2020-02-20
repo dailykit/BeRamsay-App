@@ -20,6 +20,7 @@ const QuantitySelector = props => {
         <TouchableOpacity
           onPress={() => setSelected(box)}
           style={box == selected ? styles.selected : styles.unselected}
+          key={_id}
         >
           <Text
             style={
@@ -61,12 +62,28 @@ const TrendingRecipiesView = props => {
             </Layout>
             <Layout style={styles.lowerHalf}>
               <Layout style={styles.lowerLeft}>
-                <Feather name="heart" size={25} />
+                {/* <Feather name="heart" size={25} />
                 <Feather name="share" size={25} />
-                <Feather name="calendar" size={25} />
+                <Feather name="calendar" size={25} /> */}
+                <Image
+                  style={styles.icons}
+                  source={require("../../../assets/tasty.png")}
+                />
+                <Image
+                  style={styles.icons}
+                  source={require("../../../assets/share.png")}
+                />
+                <Image
+                  style={styles.icons}
+                  source={require("../../../assets/calendar.png")}
+                />
               </Layout>
               <Layout style={styles.lowerRight}>
-                <Feather style={styles.cart} name="shopping-cart" size={25} />
+                {/* <Feather style={styles.cart} name="shopping-cart" size={25} /> */}
+                <Image
+                  style={[styles.cart, styles.icons]}
+                  source={require("../../../assets/cart.png")}
+                />
               </Layout>
             </Layout>
           </Layout>
@@ -122,8 +139,6 @@ const styles = StyleSheet.create({
   },
   cart: {
     marginRight: 20,
-    backgroundColor: "#24A0Ed",
-    color: "white",
     padding: 10,
     borderRadius: 50
   },
@@ -139,7 +154,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: height * 0.06,
     justifyContent: "center",
-    backgroundColor: "#24A0Ed"
+    backgroundColor: "#3FA4FF"
   },
   unselected: {
     width: width * 0.075,
@@ -172,7 +187,8 @@ const styles = StyleSheet.create({
   },
   date: {
     color: "gray"
-  }
+  },
+  icons: {}
 });
 
 export default TrendingRecipiesView;
