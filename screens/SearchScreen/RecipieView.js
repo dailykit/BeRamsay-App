@@ -36,10 +36,25 @@ const QuantitySelector = props => {
 };
 
 const TrendingRecipiesView = props => {
+  props.navigation.setOptions({
+    title: "Resturants",
+    headerStatusBarHeight: 0,
+    headerLeft: () => (
+      <TouchableOpacity
+        style={{ marginLeft: 10 }}
+        onPress={() => props.navigation.goBack()}
+      >
+        <Image
+          style={{ height: 20 }}
+          source={require("../../assets/back.png")}
+        />
+      </TouchableOpacity>
+    )
+  });
   return (
     <Layout>
-      <Layout style={styles.container}>
-        {props.data.map((recipie, _id) => (
+      <ScrollView style={styles.container}>
+        {props.route.params.data.map((recipie, _id) => (
           <Layout style={styles.block} key={_id}>
             <Layout style={styles.upperHalf}>
               <Layout style={styles.imageContainer}>
@@ -88,6 +103,10 @@ const TrendingRecipiesView = props => {
             </Layout>
           </Layout>
         ))}
+      </ScrollView>
+      <Layout style={styles.bottomBar}>
+        <Image source={require("./../../assets/back.png")} />
+        <Image source={require("./../../assets/filter.png")} />
       </Layout>
     </Layout>
   );
@@ -188,7 +207,19 @@ const styles = StyleSheet.create({
   date: {
     color: "gray"
   },
-  icons: {}
+  icons: {},
+  bottomBar: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 10,
+    position: "absolute",
+    bottom: 0,
+    width,
+    paddingBottom: 10
+  }
 });
 
 export default TrendingRecipiesView;
