@@ -6,8 +6,9 @@ import {
   View,
   TouchableOpacity
 } from "react-native";
-import { Layout, Text, Button } from "@ui-kitten/components";
+import { Layout, Button } from "@ui-kitten/components";
 
+import Text from "../../components/TextComponent";
 import { height, width } from "../../constants/Layout";
 
 const ResturantView = props => {
@@ -87,7 +88,8 @@ const styles = StyleSheet.create({
     position: "absolute",
     color: "white",
     bottom: 60,
-    left: 10
+    left: 10,
+    fontSize: 24
   },
   button: {
     backgroundColor: "#3FA4FF",
@@ -97,7 +99,8 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   detailsText: {
-    color: "white"
+    color: "white",
+    fontSize: 16
   },
   overlay: {
     flex: 1,

@@ -1,11 +1,12 @@
 import * as React from "react";
 import { StyleSheet } from "react-native";
-import { Text, Layout } from "@ui-kitten/components";
+import { Layout } from "@ui-kitten/components";
+import Text from "../../components/TextComponent";
 
 export default function SearchScreen() {
   return (
     <Layout style={styles.container}>
-      <Text>Home Screen</Text>
+      <Text style={{ fontSize: 28 }}>Home Screen</Text>
     </Layout>
   );
 }

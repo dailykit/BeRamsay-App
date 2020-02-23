@@ -1,14 +1,8 @@
 import React, { useState } from "react";
-import {
-  ScrollView,
-  StyleSheet,
-  View,
-  Image,
-  TouchableOpacity
-} from "react-native";
-import { Layout, Text } from "@ui-kitten/components";
-import { Feather } from "@expo/vector-icons";
+import { ScrollView, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { Layout } from "@ui-kitten/components";
 
+import Text from "../../components/TextComponent";
 import { height, width } from "../../constants/Layout";
 
 const QuantitySelector = props => {
@@ -37,7 +31,7 @@ const QuantitySelector = props => {
 
 const TrendingRecipiesView = props => {
   props.navigation.setOptions({
-    title: "Resturants",
+    title: "Recipies",
     headerStatusBarHeight: 0,
     headerLeft: () => (
       <TouchableOpacity
@@ -188,11 +182,14 @@ const styles = StyleSheet.create({
   unselectedText: {},
   recipie_name: {
     color: "#1f1f1f",
-    fontSize: 18
+    fontSize: 18,
+    padding: 0,
+    marginTop: 10
   },
   resturant_name: {
     color: "gray",
-    fontSize: 16
+    fontSize: 16,
+    padding: 0
   },
   priceConatiner: {
     flexDirection: "row",

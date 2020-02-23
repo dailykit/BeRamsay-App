@@ -1,12 +1,12 @@
 import * as React from "react";
 import { StyleSheet, ScrollView, TouchableOpacity } from "react-native";
-import { Layout, Text } from "@ui-kitten/components";
+import { Layout } from "@ui-kitten/components";
 
+import Text from "../../components/TextComponent";
 import TopBar from "./components/TopBar";
 import ChipsView from "./components/ChipsView";
 import ResturantScrollCardView from "./components/ResturantScrollCardView";
 import TrendingRecipiesView from "./components/TrendingRecipiesView";
-import ResturantView from "./ResturantView";
 
 import { createStackNavigator } from "@react-navigation/stack";
 const Stack = createStackNavigator();
@@ -151,7 +151,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-between"
   },
   nearYouHeading: {
-    paddingLeft: 10
+    paddingLeft: 10,
+    fontWeight: "bold",
+    fontSize: 22
   },
   viewAllText: {
     paddingRight: 10

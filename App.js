@@ -83,6 +83,12 @@ export default function App(props) {
         });
         const images = [
           require("./assets/temp_resturnt.jpg"),
+          require("./assets/back.png"),
+          require("./assets/calendar.png"),
+          require("./assets/cart.png"),
+          require("./assets/filter.png"),
+          require("./assets/share.png"),
+          require("./assets/tasty.png"),
           require("./assets/salad.jpg")
         ];
         cacheImages(images);

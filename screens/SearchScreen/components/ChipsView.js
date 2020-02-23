@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { ScrollView, StyleSheet } from "react-native";
-import { Layout, Text } from "@ui-kitten/components";
+import { Layout } from "@ui-kitten/components";
 
+import Text from "../../../components/TextComponent";
 import { ThemeContext } from "../../../contexts/theme-context";
 
 import { height, width } from "../../../constants/Layout";
@@ -17,7 +18,7 @@ const ChipsView = props => {
             style={[styles.chip, { borderColor: isLight ? "gray" : "white" }]}
             key={_id}
           >
-            <Text>{chip}</Text>
+            <Text style={{ padding: 0, color: "gray" }}>{chip}</Text>
           </Layout>
         ))}
       </ScrollView>

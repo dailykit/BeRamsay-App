@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { TextInput, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import { Layout, Icon } from "@ui-kitten/components";
+import { Layout } from "@ui-kitten/components";
 
 import { ThemeContext } from "../../../contexts/theme-context";
 

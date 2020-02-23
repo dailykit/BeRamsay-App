@@ -1,15 +1,10 @@
 import React, { useState } from "react";
-import {
-  ScrollView,
-  StyleSheet,
-  View,
-  Image,
-  TouchableOpacity
-} from "react-native";
-import { Layout, Text } from "@ui-kitten/components";
-import { Feather } from "@expo/vector-icons";
+import { StyleSheet, Image, TouchableOpacity } from "react-native";
+import { Layout } from "@ui-kitten/components";
 
+import Text from "../../../components/TextComponent";
 import { height, width } from "../../../constants/Layout";
+import tastyIcon from "../../../assets/tasty.png";
 
 const QuantitySelector = props => {
   const quantites = [1, 2, 3, 4, 5, 6];
@@ -65,10 +60,7 @@ const TrendingRecipiesView = props => {
                 {/* <Feather name="heart" size={25} />
                 <Feather name="share" size={25} />
                 <Feather name="calendar" size={25} /> */}
-                <Image
-                  style={styles.icons}
-                  source={require("../../../assets/tasty.png")}
-                />
+                <Image style={styles.icons} source={tastyIcon} />
                 <Image
                   style={styles.icons}
                   source={require("../../../assets/share.png")}
@@ -169,11 +161,14 @@ const styles = StyleSheet.create({
   unselectedText: {},
   recipie_name: {
     color: "#1f1f1f",
-    fontSize: 18
+    fontSize: 18,
+    padding: 0,
+    marginTop: 10
   },
   resturant_name: {
     color: "gray",
-    fontSize: 16
+    fontSize: 16,
+    padding: 0
   },
   priceConatiner: {
     flexDirection: "row",
@@ -188,7 +183,19 @@ const styles = StyleSheet.create({
   date: {
     color: "gray"
   },
-  icons: {}
+  icons: {},
+  bottomBar: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 10,
+    position: "absolute",
+    bottom: 0,
+    width,
+    paddingBottom: 10
+  }
 });
 
 export default TrendingRecipiesView;
