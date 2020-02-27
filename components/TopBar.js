@@ -3,10 +3,10 @@ import { TextInput, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { Layout } from "@ui-kitten/components";
 
-import { ThemeContext } from "../../../contexts/theme-context";
+import { ThemeContext } from "../contexts/theme-context";
 
-import { height, width } from "../../../constants/Layout";
-import Colors from "../../../constants/Colors";
+import { height, width } from "../constants/Layout";
+import Colors from "../constants/Colors";
 
 const TopBar = () => {
   const [searchString, setSearchString] = useState("");

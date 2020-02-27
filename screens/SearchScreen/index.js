@@ -3,7 +3,7 @@ import { StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { Layout } from "@ui-kitten/components";
 
 import Text from "../../components/TextComponent";
-import TopBar from "./components/TopBar";
+import TopBar from "../../components/TopBar";
 import ChipsView from "./components/ChipsView";
 import ResturantScrollCardView from "./components/ResturantScrollCardView";
 import TrendingRecipiesView from "./components/TrendingRecipiesView";

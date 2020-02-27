@@ -89,7 +89,9 @@ const styles = StyleSheet.create({
     color: "white",
     bottom: 60,
     left: 10,
-    fontSize: 24
+    fontSize: 24,
+    padding: 0,
+    paddingTop: 10
   },
   button: {
     backgroundColor: "#3FA4FF",
@@ -100,7 +102,9 @@ const styles = StyleSheet.create({
   },
   detailsText: {
     color: "white",
-    fontSize: 16
+    fontSize: 16,
+    fontSize: 16,
+    padding: 0
   },
   overlay: {
     flex: 1,
