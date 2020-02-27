@@ -122,38 +122,36 @@ export default function App(props) {
           <ThemeContext.Provider value={{ theme, toggleTheme }}>
             <Suspense fallback={fallBackComponent}>
               <ErrorBoundary>
-                <Layout style={styles.container}>
-                  <SafeAreaView
-                    style={{
-                      flex: 0,
-                      backgroundColor:
-                        theme == "light"
-                          ? Colors.backgroundLight
-                          : Colors.backgroundDark
-                    }}
-                  ></SafeAreaView>
-                  <SafeAreaView style={styles.container}>
-                    <NavigationContainer
-                      ref={containerRef}
-                      initialState={initialNavigationState}
-                    >
-                      <Stack.Navigator>
-                        <Stack.Screen
-                          name="Root"
-                          component={BottomTabNavigator}
-                        />
-                        <Stack.Screen
-                          name="ResturantView"
-                          component={ResturantView}
-                        />
-                        <Stack.Screen
-                          name="RecipieView"
-                          component={RecipieView}
-                        />
-                      </Stack.Navigator>
-                    </NavigationContainer>
-                  </SafeAreaView>
-                </Layout>
+                <SafeAreaView
+                  style={{
+                    flex: 0,
+                    backgroundColor:
+                      theme == "light"
+                        ? Colors.backgroundLight
+                        : Colors.backgroundDark
+                  }}
+                ></SafeAreaView>
+                <SafeAreaView style={styles.container}>
+                  <NavigationContainer
+                    ref={containerRef}
+                    initialState={initialNavigationState}
+                  >
+                    <Stack.Navigator>
+                      <Stack.Screen
+                        name="BeRamsay"
+                        component={BottomTabNavigator}
+                      />
+                      <Stack.Screen
+                        name="ResturantView"
+                        component={ResturantView}
+                      />
+                      <Stack.Screen
+                        name="RecipieView"
+                        component={RecipieView}
+                      />
+                    </Stack.Navigator>
+                  </NavigationContainer>
+                </SafeAreaView>
               </ErrorBoundary>
             </Suspense>
           </ThemeContext.Provider>
@@ -166,10 +164,6 @@ export default function App(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    ...Platform.select({
-      android: {
-        paddingTop: Constants.statusBarHeight / 2
-      }
-    })
+    paddingTop: Platform.OS == "android" ? Constants.statusBarHeight : 0
   }
 });

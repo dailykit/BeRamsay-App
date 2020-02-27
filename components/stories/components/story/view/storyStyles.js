@@ -7,6 +7,7 @@ export default StyleSheet.create({
     height: Dimensions.get("window").height,
     width: Dimensions.get("window").width,
     flex: 1,
-    marginTop: -100
+    marginTop: -100,
+    zIndex: 99999999
   }
 });

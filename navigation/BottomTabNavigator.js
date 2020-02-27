@@ -12,7 +12,9 @@ const INITIAL_ROUTE_NAME = "Home";
 
 export default function BottomTabNavigator({ navigation, route }) {
   navigation.setOptions({
-    header: () => null
+    headerMode: false,
+    headerShown: false,
+    headerVisible: false
   });
   const themeContext = React.useContext(ThemeContext);
   const tabBackgroundColor =

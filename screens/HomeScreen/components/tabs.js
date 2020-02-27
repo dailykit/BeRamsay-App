@@ -113,7 +113,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 10,
     height: 140,
-    marginTop: 20
+    marginTop: 20,
+    zIndex: -1
   },
   newPost: {
     backgroundColor: "#f1f1f1",
