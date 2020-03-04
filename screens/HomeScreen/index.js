@@ -13,11 +13,15 @@ import { createStackNavigator } from "@react-navigation/stack";
 const Stack = createStackNavigator();
 
 const HomeScreenView = props => {
+  const [scroll, setscroll] = React.useState(true);
   return (
     <Layout style={styles.container}>
       <TopBar />
-      <ScrollView style={styles.container}>
-        <Tabs />
+      <ScrollView scrollEnabled={scroll} style={styles.container}>
+        <Tabs
+          startScroll={() => setscroll(true)}
+          stopScroll={() => setscroll(false)}
+        />
         <TouchableOpacity style={styles.newPostContainer}>
           <Layout style={styles.newPost}>
             <Text style={[styles.cookingText, { fontSize: 18 }]}>

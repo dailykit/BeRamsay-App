@@ -20,8 +20,8 @@ class StoryListItemView extends Component {
   // Component Functions
   _handleItemPress = item => {
     const { handleStoryItemPress } = this.props;
-
     if (handleStoryItemPress) handleStoryItemPress(item);
+    this.props.stopScroll();
 
     this.setState({ isPressed: true });
   };

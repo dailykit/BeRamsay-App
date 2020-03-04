@@ -19,7 +19,6 @@ class StoryListView extends Component {
   // Component Functions
   _handleStoryItemPress = (item, index) => {
     const { stories } = this.props;
-
     this.setState({ selectedStory: item });
 
     const _stories = Array.from(stories);
@@ -50,12 +49,15 @@ class StoryListView extends Component {
             stories={stories}
             unPressedBorderColor={unPressedBorderColor}
             pressedBorderColor={pressedBorderColor}
+            {...this.props}
           />
         </View>
         <Modal
           style={[styles.modal, StyleSheet.absoluteFill]}
           isOpen={isModalOpen}
-          onClosed={() => this.setState({ isModalOpen: false })}
+          onClosed={() => {
+            this.setState({ isModalOpen: false });
+          }}
           position="center"
           swipeToClose
           swipeArea={250}
@@ -65,6 +67,7 @@ class StoryListView extends Component {
             footerComponent={footerComponent}
             selectedStory={selectedStory}
             stories={orderedStories}
+            {...this.props}
           />
         </Modal>
       </Fragment>

@@ -32,6 +32,7 @@ class StoryListView extends Component {
               unPressedBorderColor={unPressedBorderColor}
               pressedBorderColor={pressedBorderColor}
               item={item}
+              {...this.props}
             />
           )}
         />

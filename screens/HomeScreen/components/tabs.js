@@ -33,7 +33,7 @@ const stories = [
   }
 ];
 
-const Tabs = () => {
+const Tabs = props => {
   const [activeTab, setActiveTab] = useState("all");
   return (
     <Layout style={styles.container}>
@@ -68,6 +68,8 @@ const Tabs = () => {
           unPressedBorderColor="#e95950"
           pressedBorderColor="#ebebeb"
           stories={stories}
+          stopScroll={() => props.stopScroll()}
+          startScroll={() => props.startScroll()}
         />
       </Layout>
     </Layout>
