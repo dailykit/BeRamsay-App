@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     borderBottomColor: "grey"
   },
   storiesContainer: {
-    height: height * 0.15,
+    height: height * 0.2,
     justifyContent: "center"
   },
   container: {
