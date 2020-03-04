@@ -8,14 +8,11 @@ import { StoryList, Stories } from "../../../components";
 import styles from "./storyStyles";
 
 class StoryListView extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isModalOpen: false,
-      orderedStories: null,
-      selectedStory: null
-    };
-  }
+  state = {
+    isModalOpen: false,
+    orderedStories: null,
+    selectedStory: null
+  };
 
   // Component Life Cycles
 

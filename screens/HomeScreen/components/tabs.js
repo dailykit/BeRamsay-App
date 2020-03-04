@@ -70,16 +70,6 @@ const Tabs = () => {
           stories={stories}
         />
       </Layout>
-      <TouchableOpacity style={styles.newPostContainer}>
-        <Layout style={styles.newPost}>
-          <Text style={[styles.cookingText, { fontSize: 18 }]}>
-            What's Cooking Today?
-          </Text>
-          <Text style={[styles.cookingText, { fontSize: 14 }]}>
-            add a post to your Dailykit journey
-          </Text>
-        </Layout>
-      </TouchableOpacity>
     </Layout>
   );
 };
@@ -106,27 +96,7 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   container: {
-    position: "absolute",
-    marginTop: 60
-  },
-  newPostContainer: {
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    height: 140,
-    marginTop: 20,
-    zIndex: -1
-  },
-  newPost: {
-    backgroundColor: "#f1f1f1",
-    flex: 1,
-    borderRadius: 10,
-    flexDirection: "column",
-    alignItems: "flex-start",
-    justifyContent: "space-evenly",
-    paddingVertical: 40
-  },
-  cookingText: {
-    color: "gray"
+    position: "absolute"
   }
 });
 

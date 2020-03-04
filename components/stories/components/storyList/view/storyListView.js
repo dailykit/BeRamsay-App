@@ -5,10 +5,7 @@ import { StoryListItem } from "../../../components";
 import styles from "./storyListStyles";
 
 class StoryListView extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  state = {};
 
   // Component Life Cycles
 
