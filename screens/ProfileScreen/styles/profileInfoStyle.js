@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   container: {
     flexDirection: "column",
-    marginBottom: 50
+    marginBottom: 5
   },
   profileLayout: {
     flexDirection: "row",
