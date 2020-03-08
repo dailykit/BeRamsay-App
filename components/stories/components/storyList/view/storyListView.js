@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, FlatList } from "react-native";
 // Components
-import { StoryListItem } from "../../../components";
+import StoryListItem from "../../storyListItem/view/storyListItemView";
 import styles from "./storyListStyles";
 
 class StoryListView extends Component {

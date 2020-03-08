@@ -2,7 +2,6 @@
 import * as React from "react";
 import { View, Image, Text, SafeAreaView } from "react-native";
 import styles from "./avatarStyles";
-import type { ImageSourcePropType } from "react-native/Libraries/Image/ImageSourcePropType";
 import DEFAULT_AVATAR from "../../../assets/avatars/no_avatar.png";
 
 export default class Avatar extends React.PureComponent {

@@ -8,7 +8,7 @@ import {
   ActivityIndicator
 } from "react-native";
 import styles from "./storiesStyles";
-import { StoryItem } from "../../";
+import StoryItem from "../../storyItem/view/storyItemView";
 
 const { width } = Dimensions.get("window");
 const perspective = width;

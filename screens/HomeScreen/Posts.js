@@ -6,6 +6,8 @@ import { height, width } from "../../constants/Layout";
 import Text from "../../components/TextComponent";
 import TextPost from "./components/TextPost";
 import PhotoPost from "./components/PhotoPost";
+import VideoPost from "./components/VideoPost";
+import MultiImagesPost from "./components/MultiImagesPost";
 
 const posts = [
   {
@@ -32,13 +34,25 @@ const posts = [
     name: "Sunny Dhama",
     time: "2h ago",
     avatar: require("../../assets/avatar.jpg"),
-    // type: "videoPost",
-    data: {}
+    type: "videoPost",
+    data: {
+      src: "http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
+      desc: "This dish looks good!"
+    }
   },
   {
     name: "Sunny Dhama",
     time: "2h ago",
-    avatar: require("../../assets/avatar.jpg")
+    avatar: require("../../assets/avatar.jpg"),
+    type: "multiImagesPost",
+    data: {
+      images: [
+        require("../../assets/story.jpg"),
+        require("../../assets/story.jpg"),
+        require("../../assets/story.jpg")
+      ],
+      desc: "This dish looks good!"
+    }
   },
   {
     name: "Sunny Dhama",
@@ -67,6 +81,10 @@ const Posts = props => {
               </Layout>
               {post.type == "textPost" && <TextPost data={post} />}
               {post.type == "photoPost" && <PhotoPost data={post} />}
+              {post.type == "videoPost" && <VideoPost data={post} />}
+              {post.type == "multiImagesPost" && (
+                <MultiImagesPost data={post} />
+              )}
               <Layout style={styles.bottomBar}>
                 <Layout style={styles.postBottomBarLeft}>
                   <Layout style={styles.avatarContainer}>

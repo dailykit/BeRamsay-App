@@ -3,7 +3,8 @@ import { View, StyleSheet } from "react-native";
 import Modal from "react-native-modalbox";
 
 // Components
-import { StoryList, Stories } from "../../../components";
+import StoryList from "../../storyList/view/storyListView";
+import Stories from "../../stories/view/storiesView";
 
 import styles from "./storyStyles";
 
@@ -57,10 +58,10 @@ class StoryListView extends Component {
           isOpen={isModalOpen}
           onClosed={() => {
             this.setState({ isModalOpen: false });
+            this.props.startScroll();
           }}
           position="center"
           swipeToClose
-          swipeArea={250}
           backButtonClose
         >
           <Stories
