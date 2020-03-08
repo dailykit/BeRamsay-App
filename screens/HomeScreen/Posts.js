@@ -1,13 +1,14 @@
 import React from "react";
-import { StyleSheet, ScrollView, TouchableOpacity, Image } from "react-native";
+import { StyleSheet, Image } from "react-native";
 import { Layout } from "@ui-kitten/components";
-import { height, width } from "../../constants/Layout";
 
 import Text from "../../components/TextComponent";
 import TextPost from "./components/TextPost";
 import PhotoPost from "./components/PhotoPost";
 import VideoPost from "./components/VideoPost";
 import MultiImagesPost from "./components/MultiImagesPost";
+import PollPost from "./components/PollPost";
+import TaggedRecipiePost from "./components/TaggedRecipiePost";
 
 const posts = [
   {
@@ -57,7 +58,49 @@ const posts = [
   {
     name: "Sunny Dhama",
     time: "2h ago",
-    avatar: require("../../assets/avatar.jpg")
+    avatar: require("../../assets/avatar.jpg"),
+    type: "pollPost",
+    data: {
+      questions: ["Yes! All the times", "Sometimes", "Never"],
+      desc: "Have you guys also been reciving kits late from @VeganAdda?"
+    }
+  },
+  {
+    name: "Sunny Dhama",
+    time: "2h ago",
+    avatar: require("../../assets/avatar.jpg"),
+    type: "taggedRecipiePost",
+    data: {
+      type: "pollPost",
+      questions: ["Yes! All the times", "Sometimes", "Never"],
+      desc: "Have you guys also been reciving kits late from @VeganAdda?"
+    }
+  },
+  {
+    name: "Sunny Dhama",
+    time: "2h ago",
+    avatar: require("../../assets/avatar.jpg"),
+    type: "taggedRecipiePost",
+    data: {
+      type: "videoPost",
+      src: "http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
+      desc: "This dish looks good!"
+    }
+  },
+  {
+    name: "Sunny Dhama",
+    time: "2h ago",
+    avatar: require("../../assets/avatar.jpg"),
+    type: "taggedRecipiePost",
+    data: {
+      type: "multiImagesPost",
+      images: [
+        require("../../assets/story.jpg"),
+        require("../../assets/story.jpg"),
+        require("../../assets/story.jpg")
+      ],
+      desc: "This dish looks good!"
+    }
   }
 ];
 
@@ -82,9 +125,14 @@ const Posts = props => {
               {post.type == "textPost" && <TextPost data={post} />}
               {post.type == "photoPost" && <PhotoPost data={post} />}
               {post.type == "videoPost" && <VideoPost data={post} />}
+              {post.type == "pollPost" && <PollPost data={post} />}
+              {post.type == "taggedRecipiePost" && (
+                <TaggedRecipiePost data={post} />
+              )}
               {post.type == "multiImagesPost" && (
                 <MultiImagesPost data={post} />
               )}
+
               <Layout style={styles.bottomBar}>
                 <Layout style={styles.postBottomBarLeft}>
                   <Layout style={styles.avatarContainer}>
