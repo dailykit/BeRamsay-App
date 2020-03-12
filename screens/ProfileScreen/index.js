@@ -5,6 +5,7 @@ import TopBar from "../../components/TopBar";
 import { ThemeContext } from "../../contexts/theme-context";
 import ProfileInfo from "./component/profileInfo";
 import styles from "./profileStyle";
+import HungerBoardCalendar from "./component/HungerBoardCalendar";
 
 
 const useInputChanges = (initialValue = '') => {
@@ -47,6 +48,7 @@ const ProfileScreen = () => {
           numberOfLines={4}
           {...largeInputChanges}
         />
+        <HungerBoardCalendar />
         <Toggle
           text={`Light/Dark Mode`}
           checked={checked}
