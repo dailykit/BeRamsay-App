@@ -103,7 +103,7 @@ const AddPost = ({ navigation, ...restProps }) => {
             setisUpArrowVisible(0);
             setDownArrowContainer(50);
           }}
-          containerHeight={500}
+          containerHeight={550}
           offset={100}
           startUp={true}
         >
@@ -260,7 +260,7 @@ const styles = StyleSheet.create({
     height: 50
   },
   textInput: {
-    padding: 10
+    padding: 20
   },
   image: {
     height: "auto",

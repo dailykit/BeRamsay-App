@@ -108,7 +108,6 @@ export default class Stories extends PureComponent {
               key={story.id}
             >
               <StoryItem
-                {...this.props}
                 footerComponent={footerComponent}
                 handleSelectedStoryOnLoaded={this._handleSelectedStoryOnLoaded}
                 selectedStory={selectedStory}

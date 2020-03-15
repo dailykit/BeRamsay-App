@@ -9,11 +9,14 @@ import Stories from "../../stories/view/storiesView";
 import styles from "./storyStyles";
 
 class StoryListView extends Component {
-  state = {
-    isModalOpen: false,
-    orderedStories: null,
-    selectedStory: null
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalOpen: false,
+      orderedStories: null,
+      selectedStory: null
+    };
+  }
 
   // Component Life Cycles
 
@@ -62,6 +65,7 @@ class StoryListView extends Component {
           }}
           position="center"
           swipeToClose
+          swipeArea={250}
           backButtonClose
         >
           <Stories

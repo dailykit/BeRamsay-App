@@ -11,7 +11,6 @@ import AppPost from "./AddPost";
 import { height, width } from "../../constants/Layout";
 
 import { createStackNavigator } from "@react-navigation/stack";
-import AddPost from "./AddPost";
 const Stack = createStackNavigator();
 
 const HomeScreenView = ({ navigation }) => {
@@ -26,6 +25,7 @@ const HomeScreenView = ({ navigation }) => {
         />
         <TouchableOpacity
           style={styles.newPostContainer}
+          disabled={!scroll}
           onPress={() => navigation.navigate("AddPost")}
         >
           <Layout style={styles.newPost}>
