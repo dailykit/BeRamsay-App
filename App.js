@@ -32,6 +32,7 @@ import BottomTabNavigator from "./navigation/BottomTabNavigator";
 import useLinking from "./navigation/useLinking";
 import ResturantView from "./screens/SearchScreen/ResturantView";
 import RecipieView from "./screens/SearchScreen/RecipieView";
+import AddPost from "./screens/HomeScreen/AddPost";
 
 import fallBackComponent from "./components/FallbackComponent";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -153,6 +154,7 @@ export default function App(props) {
                         name="RecipieView"
                         component={RecipieView}
                       />
+                      <Stack.Screen name="AddPost" component={AddPost} />
                     </Stack.Navigator>
                   </NavigationContainer>
                 </SafeAreaView>

@@ -6,13 +6,15 @@ import Text from "../../components/TextComponent";
 import TopBar from "../../components/TopBar";
 import Tabs from "./components/tabs";
 import Posts from "./Posts";
+import AppPost from "./AddPost";
 
 import { height, width } from "../../constants/Layout";
 
 import { createStackNavigator } from "@react-navigation/stack";
+import AddPost from "./AddPost";
 const Stack = createStackNavigator();
 
-const HomeScreenView = props => {
+const HomeScreenView = ({ navigation }) => {
   const [scroll, setscroll] = React.useState(true);
   return (
     <Layout style={styles.container}>
@@ -22,7 +24,10 @@ const HomeScreenView = props => {
           startScroll={() => setscroll(true)}
           stopScroll={() => setscroll(false)}
         />
-        <TouchableOpacity style={styles.newPostContainer}>
+        <TouchableOpacity
+          style={styles.newPostContainer}
+          onPress={() => navigation.navigate("AddPost")}
+        >
           <Layout style={styles.newPost}>
             <Text style={[styles.cookingText, { fontSize: 18 }]}>
               What's Cooking Today?
