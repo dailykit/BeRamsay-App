@@ -1,0 +1,1 @@
+{"ast":null,"code":"import{Story}from\"./components\";export default Story;","map":{"version":3,"sources":["D:/New Projects/BeRamsayApp/components/stories/index.js"],"names":["Story"],"mappings":"AAAA,OAASA,KAAT,oBAEA,cAAeA,CAAAA,KAAf","sourcesContent":["import { Story } from \"./components\";\n\nexport default Story;\n"]},"metadata":{},"sourceType":"module"}
